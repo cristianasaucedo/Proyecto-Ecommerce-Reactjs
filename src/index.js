@@ -1,24 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-//import NavBar from './components/NavBar';
-import NavBarBoot from './components/NavBarBootstrap';
-
-import Contador from './components/ItemCount';
-
-//import ItemContenedor from './components/ItemListContainer';
-import ItemContenedorBoot from './components/ItemListContainerBoots';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBarBoot from './components/NavBar';
+import Item from './components/Item';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <NavBarBoot />
-    <ItemContenedorBoot />
+    <Item />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import React , { useState } from "react";
+import {Button} from 'react-bootstrap';
 
 function Contador() {
 
@@ -14,13 +15,11 @@ const disminuirContador = () => {
   }
 
 return (
-  <div>
-    <button onClick={ aumentarContador }>+</button>
-
+  <>
+    <Button bg="dark" variant="dark" onClick={ aumentarContador }>+</Button>
     <p>Cantidad: {state}</p>
-
-    <button onClick={ disminuirContador }>-</button>
-  </div>
+    <Button bg="dark" variant="dark" onClick={ disminuirContador }>-</Button>
+  </>
 )}
 
 export default Contador;
