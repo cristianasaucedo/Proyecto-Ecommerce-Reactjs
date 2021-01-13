@@ -1,21 +1,22 @@
 import React from 'react';
-import productos from './components/ListaProductos';
+import Item from './Item';
 
-const Prod = ({ productos }) => {
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-        const ListaProductos = new Promise((res, rec) => {
-            setTimeout(() => {
-                res(productos)
-                rec("Error")
-            }, 2000)
-        })
+function ItemList({productos}){
+    return (
+        <div>
+            {productos.map ( producto => 
+            <Item
+            id={producto.id}
+            nombre={producto.nombre}
+            imagen={producto.imagen}
+            marca={producto.marca}
+            precio={producto.precio}
+            categoria={producto.categoria}
+            descripcion={producto.categoria}
+             />
+            )}
+        </div>
+    )
+}
 
-        ListaProductos.then((prodCargados)=>{
-            setItems(prodCargados);
-        }).catch((prodCargados) => {
-            console.log({ prodCargados })
-        })
-    })
-
-    export default prodCargados;
+export default ItemList;

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 //import Booststrap from 'bootstrap';
 import { Button, Navbar, Nav, Form} from 'react-bootstrap';
 
-function NavBarBoot(){
+function NavBar(){
     return(
 <>
   <Navbar bg="dark" variant="dark">
@@ -22,4 +22,4 @@ function NavBarBoot(){
 </>    
 )}
 
-export default NavBarBoot;
+export default NavBar;

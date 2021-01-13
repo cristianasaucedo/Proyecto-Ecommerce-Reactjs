@@ -1,23 +1,23 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, CardGroup, CardDeck, CardColumns } from 'react-bootstrap';
 import Contador from './ItemCount';
-import prodCargados from './ItemList';
+import { Link } from 'react-router-dom';
 
-function Item(){
+function Item ({id, nombre, imagen, precio}) {
     return(
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://d34zlyc2cp9zm7.cloudfront.net/products/c261c94c8d41c6d9a8b6a79e9b9641ed42516032e1cc146377835818e8345ce6.jpg_500" />
-            <Card.Body>
-                <Card.Title>Nombre del producto</Card.Title>
+        <CardColumns>
+            <Card>
+                <Card.Img variant="top" src={imagen} />
+                <Card.Body>
+                    <Card.Title>{nombre}</Card.Title>
+                    <Card.Text>{precio}</Card.Text>
                     <Card.Text>
-                        Marca
-                    </Card.Text>
-                    <Card.Text>
-                        Precio del producto.
+                        <Link to={'/item/' + id}>Ver más</Link>
                     </Card.Text>
                     <Contador />
-            </Card.Body>
-        </Card>
+                </Card.Body>
+            </Card>
+        </CardColumns>
     )
 }
 
